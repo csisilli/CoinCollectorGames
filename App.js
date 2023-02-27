@@ -40,7 +40,7 @@ RESULTS:
 
 */
 (function () {
-
+  //player id
   let playerId;
   let playerRef;
   firebase.auth().onAuthStateChnaged((user)=>{
