@@ -31,6 +31,54 @@ function keyString(x,y){
 }
 /*
 NAME:-
+      createName()
+DESCRIPTION:
+        Creates different arrays like prefixs,animals, and etc.
+RESULTS:
+    1. Once opening the app, the user can create a name to join in the server. 
+
+*/
+function createName(){
+const prefix =MathrandomArray([
+  "COOL",
+  "SUPER",
+  "HIP",
+  "SMUG",
+  "SILKY",
+  "GOOD",
+  "SAFE",
+  "DEAR",
+  "DAMP",
+  "WARM",
+  "RICH",
+  "LONG",
+  "DARK",
+  "SOFT",
+  "BUFF",
+  "DOPE",
+]);
+const animal = MathrandomArray([
+  "DOG",
+  "CAT",
+  "FOX",
+  "DUCK",
+  "LAMB",
+  "GOOD",
+  "MULE",
+  "DEER",
+  "GOAT",
+  "PUMA",
+  "SEAL",
+  "LAMB",
+  "BEAR",
+  "WOLF",
+  "BIRD",
+  "BUG",
+]);
+return `${prefix} ${animal}`;
+}
+/*
+NAME:-
       ()
 DESCRIPTION:
         (), beginning style of what will be written inside the App(), there will be seperate part for different areas.
@@ -51,7 +99,7 @@ RESULTS:
       playerRef = firebase.datanase().ref(`player/${[playerId]}`)
       // calling the function
       const name = createName()
-
+      
       playerRef.set({
         id:playerId,
         name: "Cait",
