@@ -1,8 +1,13 @@
 
 import './index.css';
 import './index.html';
+//Initalzing and Importing Firebase App 
 const { initializeApp } = require('firebase-admin/app');
 import { initializeApp } from 'firebase-admin/app';
+
+//Options for Player Colors that are appear to these colors
+const playerColors =["blue","red","orange","yellow","green","purple"];
+
 /*
 NAME:
        MathrandomArray(array)
@@ -39,6 +44,7 @@ RESULTS:
 
 */
 function createName(){
+  //part of a random array for the user can pick their name.
 const prefix =MathrandomArray([
   "COOL",
   "SUPER",
@@ -57,6 +63,7 @@ const prefix =MathrandomArray([
   "BUFF",
   "DOPE",
 ]);
+//part of a random array for the user can pick their name as well.
 const animal = MathrandomArray([
   "DOG",
   "CAT",
@@ -102,12 +109,16 @@ RESULTS:
       
       playerRef.set({
         id:playerId,
-        name: "Cait",
-        color: "blue",
+        name,
+        color: MathrandomArray(playerColors),
         x:3,
         y:3,
         coins: 0,
       })
+
+      //Remove player from Firebase once a user disconnects
+      playerRef.onDisconnect().remove();
+
     }else {
       //You are logged out~ Goodbye!
     }
