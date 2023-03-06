@@ -86,6 +86,44 @@ return `${prefix} ${animal}`;
 }
 /*
 NAME:-
+      initGame()
+DESCRIPTION:
+        initGame(), a function within the game running will have other players join as a player card in firebase. 
+RESULTS:
+    1. Read the players and coins in the game
+
+*/
+function initGame(){
+  // playerref is for all players in the game
+    const allPlayerRef =firebase.database().ref('players');
+    const allCoinRef=firebase.database().ref('coins');
+
+    allPlayerRef.on("value",(snapshot)=>{
+      //Fires when a change does occur
+
+    })
+    allPlayerRef.on("child_added",(snapshot)=>{
+      //Fires when a node is added to the tree
+      const addedPlayer= snapshot.val();
+      const characterElement = document.createElement("div");
+      characterElement.classList.add("Character", "grid-cell");
+      //if it the creator aka Caitlin it should show in green it me
+      if(addedPlayer.id === playerId){
+        characterElement.classList.add("you");
+      }
+        characterElement.innerHTML =(`
+        <div class ="Character_shadow grid-cell"></div>
+        <div class ="Character_sprite grid-cell"></div>
+        <div class ="Character_name-container">
+          <span class="Character_name"></span>
+          span class="Character_coins">0</span>
+        </div>
+        <div class ="Character_you-arrow"></div> 
+        `)
+    })
+}
+/*
+NAME:-
       ()
 DESCRIPTION:
         (), beginning style of what will be written inside the App(), there will be seperate part for different areas.
@@ -118,6 +156,9 @@ RESULTS:
 
       //Remove player from Firebase once a user disconnects
       playerRef.onDisconnect().remove();
+
+      //Begins game when user signs in
+      initGame();
 
     }else {
       //You are logged out~ Goodbye!
