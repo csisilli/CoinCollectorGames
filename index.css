@@ -1,0 +1,156 @@
+/*
+NAME:-
+      *
+DESCRIPTION:
+        * anything label as this will get a box size border
+RESULTS:
+    1. the game will be in a box-sizing border
+
+*/
+* {
+    box-sizing: border-box;
+}
+/*
+NAME:-
+      html,body
+DESCRIPTION:
+        Anything in the index.html that is labeled html and body will be modify with the code here
+RESULTS:
+    1. Visually see the backgrond color change, margin, padding, height, display, font, and etc be modify.
+
+*/
+html,body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: linear-gradient(180deg, #64BEFF -50%, #6e96ff 69.71%, #2a65ff 150%);
+    font-family: 'Source Sans Pro', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*
+NAME:-
+      game-container
+DESCRIPTION:
+        Anything in the index.html that is labeled game-container which is a class is in index.html.
+RESULTS:
+    1. Visually see the what is in the ckass will be modify with poistion, height, width, transform will be scaled to 3, and image will be rendered to be pixelated
+
+*/
+.game-container {
+    position: relative;
+    width: 240px;
+    height: 208px;
+    background: url(/images/map.png) no-repeat no-repeat;
+    transform: scale(3);
+    image-rendering: pixelated;
+}
+/*
+NAME:-
+      player-info
+DESCRIPTION:
+        Anything in the index.html that is labeled player-info which is a class inside .game-container which is in index.html.
+RESULTS:
+    1. Fix the character info visually. The poistion, top,left padding, display, gap, and align items.
+
+*/
+.player-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1em;
+    display: flex;
+    gap: 0.5em;
+    align-items: flex-end;
+}
+/*
+NAME:-
+     label
+DESCRIPTION:
+       Modify the players name
+RESULTS:
+    1. changing the display and font of the user name
+
+*/
+label {
+    display: block;
+    font-weight: bold;
+}
+/*
+NAME:
+     input [type ="text"],button
+DESCRIPTION:
+       Modify the button with the text
+RESULTS:
+    1. changing the display of the button to look different with, the font style, size, weight, height, boreer-radius, and outline
+
+*/
+input [type ="text"],
+button{
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 18px;
+    height: 44px;
+    border-radius: 4px;
+    outline: 0;
+}
+/*
+NAME:-
+     input [type ="text"]
+DESCRIPTION:
+       Modify the text
+RESULTS:
+    1. changing the display of the text with outline, padding, border with color, width, and text-transform
+
+*/
+input [type ="text"] {
+    outline: 0;
+    padding-left: 0.5rem;
+    border: 3px solid #222034;
+    width: 150px;
+    text-transform: uppercase;
+}
+/*
+NAME:-
+     input [type ="text"]:focus
+DESCRIPTION:
+       Modify the text
+RESULTS:
+    1. changing the display of the text border color to pink
+
+*/
+input [type ="text"]:focus {
+    border-color: #f000ff;
+}
+/*
+NAME:-
+     button
+DESCRIPTION:
+       Modify the button
+RESULTS:
+    1. changing the display of the button with padding left,padding right, background color green, border, border-bottom, and cursor
+
+*/
+button {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    background: #59ff5a;
+    border: 0;
+    border-bottom: 2px solid #1e830b;
+    cursor: pointer;
+}
+/*
+NAME:-
+     button:active
+DESCRIPTION:
+       Modify the button when active
+RESULTS:
+    1. changing the display of the button when active with the position relative and top
+*/
+button:active{
+    position: relative;
+    top: 1px;
+}
+
+/* Now for Characters */

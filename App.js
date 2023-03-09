@@ -153,7 +153,7 @@ RESULTS:
           gameContainer.appendChild(characterElement);
       })
   }
-    /*
+/*
 NAME:-
       firebase.auth().onAuthStateChnaged
 DESCRIPTION:
@@ -199,4 +199,3 @@ RESULTS:
   });
 
 })();
-
