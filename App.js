@@ -84,7 +84,28 @@ const animal = MathrandomArray([
 ]);
 return `${prefix} ${animal}`;
 }
+
+
 /*
+NAME:-
+      ()
+DESCRIPTION:
+        (), beginning style of what will be written inside the App(), there will be seperate part for different areas.
+        
+
+RESULTS:
+    1. Once opening the app, the title on the tab screen will say: 
+
+*/
+
+(function () {
+  //player id
+  let playerId;
+  let playerRef;
+  let playerElements = {};
+
+  const gameContainer =document.querySelector(".game-container");
+  /*
 NAME:-
       initGame()
 DESCRIPTION:
@@ -93,49 +114,54 @@ RESULTS:
     1. Read the players and coins in the game
 
 */
-function initGame(){
-  // playerref is for all players in the game
-    const allPlayerRef =firebase.database().ref('players');
-    const allCoinRef=firebase.database().ref('coins');
-
-    allPlayerRef.on("value",(snapshot)=>{
-      //Fires when a change does occur
-
-    })
-    allPlayerRef.on("child_added",(snapshot)=>{
-      //Fires when a node is added to the tree
-      const addedPlayer= snapshot.val();
-      const characterElement = document.createElement("div");
-      characterElement.classList.add("Character", "grid-cell");
-      //if it the creator aka Caitlin it should show in green it me
-      if(addedPlayer.id === playerId){
-        characterElement.classList.add("you");
-      }
-        characterElement.innerHTML =(`
-        <div class ="Character_shadow grid-cell"></div>
-        <div class ="Character_sprite grid-cell"></div>
-        <div class ="Character_name-container">
-          <span class="Character_name"></span>
-          span class="Character_coins">0</span>
-        </div>
-        <div class ="Character_you-arrow"></div> 
-        `)
-    })
-}
-/*
+  function initGame(){
+    // playerref is for all players in the game
+      const allPlayerRef =firebase.database().ref('players');
+      const allCoinRef=firebase.database().ref('coins');
+  
+      allPlayerRef.on("value",(snapshot)=>{
+        //Fires when a change does occur
+  
+      })
+      allPlayerRef.on("child_added",(snapshot)=>{
+        //Fires when a node is added to the tree
+        const addedPlayer= snapshot.val();
+        const characterElement = document.createElement("div");
+        characterElement.classList.add("Character", "grid-cell");
+        //if it the creator aka Caitlin it should show in green it me
+        if(addedPlayer.id === playerId){
+          characterElement.classList.add("you");
+        }
+          characterElement.innerHTML =(`
+          <div class ="Character_shadow grid-cell"></div>
+          <div class ="Character_sprite grid-cell"></div>
+          <div class ="Character_name-container">
+            <span class="Character_name"></span>
+            span class="Character_coins">0</span>
+          </div>
+          <div class ="Character_you-arrow"></div> 
+          `);
+          playerElements[addedPlayer.id] =characterElement;
+          //Fill like the name, coin count and etc.
+          characterElement.querySelector(".Character_name").innerText=addedPlayer.name;
+          characterElement.querySelector(".Character_coins").innerText=addedPlayer.coins;
+          characterElement.setAttribute("data-color", addedPlayer.color);
+          characterElement.setAttribute("data-direction", addedPlayer.direction);
+          const left= 16* addedPlayer.X +"px";
+          const top = 16* addedPlayer.y -4 + "px";
+          characterElement.style.transform = `translat3d(${left}, ${top},0)`;
+          gameContainer.appendChild(characterElement);
+      })
+  }
+    /*
 NAME:-
-      ()
+      firebase.auth().onAuthStateChnaged
 DESCRIPTION:
-        (), beginning style of what will be written inside the App(), there will be seperate part for different areas.
-
+        firebase.auth().onAuthStateChnaged, a function make sure the user logged in and has a player id
 RESULTS:
-    1. Once opening the app, the title on the tab screen will say: 
+    1. Read the players and gives an id to them.
 
 */
-(function () {
-  //player id
-  let playerId;
-  let playerRef;
   firebase.auth().onAuthStateChnaged((user)=>{
     console.log(user)
     if(user){
