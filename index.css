@@ -154,3 +154,49 @@ button:active{
 }
 
 /* Now for Characters */
+/*
+NAME:-
+     grid-cell
+DESCRIPTION:
+       Modify the grid of the character
+RESULTS:
+    1. changing the display of the character grid with posotion, width, and height
+*/
+.grid-cell {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+}
+/*
+NAME:-
+    Character
+DESCRIPTION:
+       Modify the grid of the character
+RESULTS:
+    1. changing the display of the character transition
+*/
+.Character {
+    transition: transform 0.4s;
+}
+/*
+NAME:-
+    Character.you
+DESCRIPTION:
+       Modify the character of me
+RESULTS:
+    1. changing the display of the character of me with the index
+*/
+.Character.you {
+   z-index: 1;
+}
+/*
+NAME:-
+    Character.you .Character_you-arrow
+DESCRIPTION:
+       Modify the character and character arrow
+RESULTS:
+    1. changing the display of the character 
+*/
+.Character.you .Character_you-arrow {
+    display: block;
+ }
