@@ -99,9 +99,13 @@ RESULTS:
 */
 
 (function () {
-  //player id
+  //player id who login in firebase
   let playerId;
+  // Intract with the database
   let playerRef;
+  //Local list of where the character is and etc
+  let players ={};
+  //list of elements
   let playerElements = {};
 
   const gameContainer =document.querySelector(".game-container");
@@ -121,7 +125,14 @@ RESULTS:
   
       allPlayerRef.on("value",(snapshot)=>{
         //Fires when a change does occur
-  
+
+        //sync our players in firebase
+        players = snapshot.val() || {};
+        //keys for each player
+        Object.keys(players).forEach((key) =>{
+
+        })
+
       })
       allPlayerRef.on("child_added",(snapshot)=>{
         //Fires when a node is added to the tree

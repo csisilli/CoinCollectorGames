@@ -189,6 +189,8 @@ RESULTS:
 .Character.you {
    z-index: 1;
 }
+/*Character's Arrows */
+
 /*
 NAME:-
     Character.you .Character_you-arrow
@@ -200,3 +202,131 @@ RESULTS:
 .Character.you .Character_you-arrow {
     display: block;
  }
+ /*
+NAME:-
+    .Character_you-arrow
+DESCRIPTION:
+    Modify the character arrow
+RESULTS:
+    1. changing the display of the character arrow with display, position, top,left,width,height, and background.
+*/
+.Character_you-arrow {
+    display: none;
+    position: absolute;
+    top:-18px;
+    left: 5px;
+    width: 7px;
+    height: 5px;
+    background: url(/images/arrow.png) no-repeat no-repeat;
+}
+
+/*Character's Sprites & Color for the Sprites*/
+
+ /*
+NAME:-
+    .Character_sprite
+DESCRIPTION:
+    Modify the character sprite
+RESULTS:
+    1. changing the display of the character sprite with overflow, top, and background
+*/
+.Character_sprite {
+    overflow: hidden;
+    top: -3px;
+    background: url(/images/characters.png);
+}
+ /*
+NAME:-
+    .Character[data-direction="right"] .Character_sprite 
+DESCRIPTION:
+    Modify the character sprite
+RESULTS:
+    1. changing the display of the character sprite with overflow, top, and background
+*/
+.Character[data-direction="right"] .Character_sprite {
+    background-position: 16px;
+}
+
+/*Instead of multiple description of each color it will be on one description*/ 
+
+/*
+NAME:-
+    .Character[data-color=""] .Character_sprite 
+DESCRIPTION:
+    Modify the character sprite
+RESULTS:
+    1. changing the display of the character sprite with background position y and the color.
+*/
+/* Red Sprite */
+.Character[data-color="red"] .Character_sprite {
+    background-position-y: -16px;
+}
+/* Orange Sprite */
+.Character[data-color="orange"] .Character_sprite {
+    background-position-y: -32px;
+}
+/* Yellow Sprite */
+.Character[data-color="yellow"] .Character_sprite {
+    background-position-y: -48px;
+}
+/* Green Sprite */
+.Character[data-color="green"] .Character_sprite {
+    background-position-y: -64px;
+}
+/* Purple Sprite */
+.Character[data-color="purple"] .Character_sprite {
+    background-position-y: -80px;
+}
+
+/*Character's Shadow */
+
+/*
+NAME:-
+    .Character_shadow 
+DESCRIPTION:
+    Modify the character shadow
+RESULTS:
+    1. changing the display of the character shadow with entering the shadow image.
+*/
+.Character_shadow {
+    background: url(/images/shadow.png) no-repeat no-repeat;
+}
+
+/*Character's Name Container */
+
+/*
+NAME:-
+    .Character_name-container
+DESCRIPTION:
+    Modify the character name container
+RESULTS:
+    1. changing the display of the character name container with position,top,left,font-size, padding, border radius, background, color, font weight, text transform, and white space.
+*/
+.Character_name-container {
+    position: absolute;
+    top: -12px;
+    left: -5px;
+    font-size: 5px;
+    padding: 1px 2px 1px;
+    border-radius: 3px;
+    background: #333;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/*Character's Coin's */
+
+/*
+NAME:-
+    .Character_coins
+DESCRIPTION:
+    Modify the character coins
+RESULTS:
+    1. changing the display of the character coin with margin left and color
+*/
+.Character_coins {
+    margin-left: 1px;
+    color: gold;
+}
