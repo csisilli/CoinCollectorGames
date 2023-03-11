@@ -1,10 +1,39 @@
+/*
+NAME:
+       mapData
+DESCRIPTION:
+         mapData-> To make specfic places off limit.        
+RESULTS:
+    Returns by the user on the map cant go over to certain parts of the map
+*/
+const mapData = {
+  minX:1,
+  maxX: 14,
+  minY: 4,
+  maxY: 12,
+  //blocking the spaces on the map.
+  blockedSpaces:{
+    "7x4": true,
+    "1x11": true,
+    "12x10": true,
+    "4x7": true,
+    "5x7": true,
+    "6x7": true,
+    "8x6": true,
+    "9x6": true,
+    "10x6": true,
+    "7x9": true,
+    "8x9": true,
+    "9x9": true,
+  },
+};
 
-import './index.css';
+/*import './index.css';
 import './index.html';
 //Initalzing and Importing Firebase App 
 const { initializeApp } = require('firebase-admin/app');
 import { initializeApp } from 'firebase-admin/app';
-
+*/
 //Options for Player Colors that are appear to these colors
 const playerColors =["blue","red","orange","yellow","green","purple"];
 
@@ -109,7 +138,37 @@ RESULTS:
   let playerElements = {};
 
   const gameContainer =document.querySelector(".game-container");
-  /*
+/*
+NAME:-
+      handleArrowPress()
+DESCRIPTION:
+        handleArrowPress(), a function of x and y coordinates of the character
+        xChange -> x postion of the character
+        yChange -> y position of the character
+RESULTS:
+    1. Find the current position of the character of x and y with updating firebase.
+
+*/
+  function handleArrowPress(xChange=0,yChange=0) {
+    const newX = players[playerId].x +xChange;
+    const newY = players[playerId].y +yChange;
+    if(true){
+      //move to the next part
+      players[playerId].x  =newX  
+      players[playerId].y  =newY
+      //new position and direction
+      if(xChange ===1){
+        players[playerId].direction ="right";
+      }
+      if(xChange ===-1){
+        players[playerId].direction ="left";
+      }
+      // let firebase know 
+      playerRef.set(players[playerId]);
+  }
+}
+
+/*
 NAME:-
       initGame()
 DESCRIPTION:
@@ -119,6 +178,12 @@ RESULTS:
 
 */
   function initGame(){
+
+    new KeyPressListener("ArrowUp", () => handleArrowPress(0,-1))
+    new KeyPressListener("ArrowDown", () => handleArrowPress(0,1))
+    new KeyPressListener("ArrowLeft", () => handleArrowPress(-1,0))
+    new KeyPressListener("ArrowRight", () => handleArrowPress(1,0))
+
     // playerref is for all players in the game
       const allPlayerRef =firebase.database().ref('players');
       const allCoinRef=firebase.database().ref('coins');
@@ -130,9 +195,17 @@ RESULTS:
         players = snapshot.val() || {};
         //keys for each player
         Object.keys(players).forEach((key) =>{
-
+          const characterState = players[key];
+          let el = playerElements[key];
+          // Use to update
+          el.querySelector(".Character_name").innerText=characterState.name;
+          el.querySelector(".Character_coins").innerText=characterState.coins;
+          el.setAttribute("data-color",characterState.color);
+          el.setAttribute("data-direction", characterState.direction);
+          const left= 16* characterState.X +"px";
+          const top = 16* characterState.y -4 + "px";
+          el.style.transform = `translat3d(${left}, ${top},0)`;
         })
-
       })
       allPlayerRef.on("child_added",(snapshot)=>{
         //Fires when a node is added to the tree
@@ -162,6 +235,12 @@ RESULTS:
           const top = 16* addedPlayer.y -4 + "px";
           characterElement.style.transform = `translat3d(${left}, ${top},0)`;
           gameContainer.appendChild(characterElement);
+      })
+      //removing the character from the game when exit
+      allPlayerRef.on("child_removed", (snapshot) =>{
+        const removedKey =snapshot.val().id;
+        gameContainer.removeChild(playerElements[removedKey]);
+        delete playerElements[removedKey];
       })
   }
 /*
