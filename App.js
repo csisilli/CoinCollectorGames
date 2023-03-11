@@ -113,8 +113,20 @@ const animal = MathrandomArray([
 ]);
 return `${prefix} ${animal}`;
 }
+/*
+NAME:-
+      isSolid(x,y)
+DESCRIPTION:
+       isSolid(x,y) changes everything to be true
+        x -> x axis on the map
+        y -> y axis on the map
+RESULTS:
+    1. Returns anything true depending on the location where the character is going to move
 
-
+*/
+function isSolid(x,y){
+  return true;
+}
 /*
 NAME:-
       ()
@@ -152,7 +164,7 @@ RESULTS:
   function handleArrowPress(xChange=0,yChange=0) {
     const newX = players[playerId].x +xChange;
     const newY = players[playerId].y +yChange;
-    if(true){
+    if(isSolid(newX,newY)){
       //move to the next part
       players[playerId].x  =newX  
       players[playerId].y  =newY
