@@ -19,7 +19,7 @@ RESULTS:
     1. Visually see the backgrond color change, margin, padding, height, display, font, and etc be modify.
 
 */
-html,body {
+html, body {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -28,7 +28,7 @@ html,body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
+  }
 /*
 NAME:-
       game-container
@@ -38,14 +38,14 @@ RESULTS:
     1. Visually see the what is in the ckass will be modify with poistion, height, width, transform will be scaled to 3, and image will be rendered to be pixelated
 
 */
-.game-container {
+.game-container { 
     position: relative;
     width: 240px;
     height: 208px;
     background: url(/images/map.png) no-repeat no-repeat;
     transform: scale(3);
     image-rendering: pixelated;
-}
+  }
 /*
 NAME:-
       player-info
@@ -58,12 +58,12 @@ RESULTS:
 .player-info {
     position: absolute;
     top: 0;
-    left: 0;
+    left:0;
     padding: 1em;
     display: flex;
     gap: 0.5em;
-    align-items: flex-end;
-}
+    align-items: flex-end
+  }
 /*
 NAME:-
      label
@@ -76,7 +76,7 @@ RESULTS:
 label {
     display: block;
     font-weight: bold;
-}
+  }
 /*
 NAME:
      input [type ="text"],button
@@ -86,14 +86,14 @@ RESULTS:
     1. changing the display of the button to look different with, the font style, size, weight, height, boreer-radius, and outline
 
 */
-input [type ="text"],
-button{
-    font-family: inherit;
-    font-weight: bold;
-    font-size: 18px;
-    height: 44px;
-    border-radius: 4px;
-    outline: 0;
+input[type="text"],
+button {
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 18px;
+  height: 44px;
+  border-radius: 4px;
+  outline: 0;
 }
 /*
 NAME:-
@@ -104,13 +104,13 @@ RESULTS:
     1. changing the display of the text with outline, padding, border with color, width, and text-transform
 
 */
-input [type ="text"] {
+input[type="text"] {
     outline: 0;
-    padding-left: 0.5rem;
+    padding-left: 0.5em;
     border: 3px solid #222034;
     width: 150px;
     text-transform: uppercase;
-}
+  }
 /*
 NAME:-
      input [type ="text"]:focus
@@ -120,9 +120,9 @@ RESULTS:
     1. changing the display of the text border color to pink
 
 */
-input [type ="text"]:focus {
+input[type="text"]:focus {
     border-color: #f000ff;
-}
+  }
 /*
 NAME:-
      button
@@ -264,19 +264,19 @@ RESULTS:
 /* Orange Sprite */
 .Character[data-color="orange"] .Character_sprite {
     background-position-y: -32px;
-}
+  }
 /* Yellow Sprite */
 .Character[data-color="yellow"] .Character_sprite {
     background-position-y: -48px;
-}
+  }
 /* Green Sprite */
 .Character[data-color="green"] .Character_sprite {
     background-position-y: -64px;
-}
+  }
 /* Purple Sprite */
 .Character[data-color="purple"] .Character_sprite {
     background-position-y: -80px;
-}
+  }
 
 /*Character's Shadow */
 
@@ -314,8 +314,7 @@ RESULTS:
     font-weight: bold;
     text-transform: uppercase;
     white-space: nowrap;
-}
-
+  }
 /*Character's Coin's */
 
 /*
@@ -329,4 +328,43 @@ RESULTS:
 .Character_coins {
     margin-left: 1px;
     color: gold;
+  }
+
+/* Coins */
+
+/*
+NAME:-
+    .Character_coins
+DESCRIPTION:
+    Modify the character coins
+RESULTS:
+    1. changing the display of the character coin with margin left and color
+*/
+.Coin_sprite {
+    background: url(/images/coin.png) no-repeat no-repeat;
+    animation: coinFloat 0.8s linear infinite alternate-reverse;
+}
+
+/*
+NAME:-
+    .Character_coins
+DESCRIPTION:
+    Modify the character coins
+RESULTS:
+    1. changing the display of the character coin with margin left and color
+*/
+@keyframes coinFloat {
+    from { transform: translateY(0) }
+    to { transform: translateY(5px) }
+  }
+/*
+NAME:-
+    .Character_coins
+DESCRIPTION:
+    Modify the character coins
+RESULTS:
+    1. changing the display of the character coin with margin left and color
+*/
+.Coin_shadow {
+    background: url(/images/coin-shadow.png) no-repeat no-repeat;
 }
