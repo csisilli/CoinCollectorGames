@@ -28,12 +28,6 @@ const mapData = {
   },
 };
 
-/*import './index.css';
-import './index.html';
-//Initalzing and Importing Firebase App 
-const { initializeApp } = require('firebase-admin/app');
-import { initializeApp } from 'firebase-admin/app';
-*/
 //Options for Player Colors that are appear to these colors
 const playerColors =["blue","red","orange","yellow","green","purple"];
 
@@ -121,11 +115,59 @@ DESCRIPTION:
         x -> x axis on the map
         y -> y axis on the map
 RESULTS:
-    1. Returns anything true depending on the location where the character is going to move
+    1. Returns anything true depending on the location where the character is able to move to.
 
 */
 function isSolid(x,y){
-  return true;
+  // makes an x and y cordinate that looks like in blockedSpaces.
+  const blockedNextSpace =mapData.blockedSpaces[keyString(x,y)];
+  // this is determinding if the space is okay step on.
+  return (
+    blockedNextSpace ||
+    x>= mapData.maxX ||
+    x < mapData.minX ||
+    y>= mapData.maxY ||
+    y < mapData.minY
+  )
+}
+/*
+NAME:-
+      randomSafeSpot()
+DESCRIPTION:
+        randomSafeSpot(), returns MathrandomArray for the character.
+        
+
+RESULTS:
+    1. Once opening the app, the character will spawm in randomly picked spots
+
+*/
+function randomSafeSpot() {
+// this is for the character to randomly spawn in these specfici spots.
+  return MathrandomArray ([
+    { x: 1, y: 4 },
+    { x: 2, y: 4 },
+    { x: 1, y: 5 },
+    { x: 2, y: 6 },
+    { x: 2, y: 8 },
+    { x: 2, y: 9 },
+    { x: 4, y: 8 },
+    { x: 5, y: 5 },
+    { x: 5, y: 8 },
+    { x: 5, y: 10 },
+    { x: 5, y: 11 },
+    { x: 11, y: 7 },
+    { x: 12, y: 7 },
+    { x: 13, y: 7 },
+    { x: 13, y: 6 },
+    { x: 13, y: 8 },
+    { x: 7, y: 6 },
+    { x: 7, y: 7 },
+    { x: 7, y: 8 },
+    { x: 8, y: 8 },
+    { x: 10, y: 8 },
+    { x: 8, y: 8 },
+    { x: 11, y: 4 },
+  ])
 }
 /*
 NAME:-
@@ -149,7 +191,15 @@ RESULTS:
   //list of elements
   let playerElements = {};
 
+  let coins ={};
+  let coinElements = {};
+
+  // These's are saved elements
   const gameContainer =document.querySelector(".game-container");
+  // this is name input that matches with the div in index.html
+  const playerNameInput = document.querySelector("#player-name");
+  // this is button input that matches with the div in index.html
+  const playerColorButton = document.querySelector("#player-color");
 /*
 NAME:-
       handleArrowPress()
@@ -164,15 +214,15 @@ RESULTS:
   function handleArrowPress(xChange=0,yChange=0) {
     const newX = players[playerId].x +xChange;
     const newY = players[playerId].y +yChange;
-    if(isSolid(newX,newY)){
+    if(!isSolid(newX,newY)){
       //move to the next part
       players[playerId].x  =newX  
       players[playerId].y  =newY
       //new position and direction
-      if(xChange ===1){
+      if(xChange === 1){
         players[playerId].direction ="right";
       }
-      if(xChange ===-1){
+      if(xChange === -1){
         players[playerId].direction ="left";
       }
       // let firebase know 
@@ -200,8 +250,8 @@ RESULTS:
       const allPlayerRef =firebase.database().ref('players');
       const allCoinRef=firebase.database().ref('coins');
   
+      //Fires when a change does occur
       allPlayerRef.on("value",(snapshot)=>{
-        //Fires when a change does occur
 
         //sync our players in firebase
         players = snapshot.val() || {};
@@ -214,7 +264,7 @@ RESULTS:
           el.querySelector(".Character_coins").innerText=characterState.coins;
           el.setAttribute("data-color",characterState.color);
           el.setAttribute("data-direction", characterState.direction);
-          const left= 16* characterState.X +"px";
+          const left= 16* characterState.x +"px";
           const top = 16* characterState.y -4 + "px";
           el.style.transform = `translat3d(${left}, ${top},0)`;
         })
@@ -243,16 +293,73 @@ RESULTS:
           characterElement.querySelector(".Character_coins").innerText=addedPlayer.coins;
           characterElement.setAttribute("data-color", addedPlayer.color);
           characterElement.setAttribute("data-direction", addedPlayer.direction);
-          const left= 16* addedPlayer.X +"px";
+          const left= 16* addedPlayer.x +"px";
           const top = 16* addedPlayer.y -4 + "px";
           characterElement.style.transform = `translat3d(${left}, ${top},0)`;
           gameContainer.appendChild(characterElement);
       })
-      //removing the character from the game when exit
+
+      //Removing the character from the game when exit
       allPlayerRef.on("child_removed", (snapshot) =>{
         const removedKey =snapshot.val().id;
         gameContainer.removeChild(playerElements[removedKey]);
         delete playerElements[removedKey];
+      })
+
+      // Remove coins from the map and update firebase
+      allCoinsRef.on("value", (snapshot) => {
+        coins = snapshot.val() || {};
+      });
+
+      //Updating where the coins will be added.
+      allCoinsRef.on("child_added", (snapshot) => {
+        const coin = snapshot.val();
+        const key = getKeyString(coin.x, coin.y);
+        coins[key] = true;
+
+        // creating an element for the coins
+        const coinElement = document.createElement("div");
+        coinElement.classList.add("Coin", "grid-cell");
+        coinElement.innerHTML = `
+        <div class="Coin_shadow grid-cell"></div>
+        <div class="Coin_sprite grid-cell"></div>
+        `;
+
+        // postions of the elements
+        const left = 16 * coin.x + "px";
+        const top = 16 * coin.y - 4 + "px";
+        coinElement.style.transform = `translate3d(${left}, ${top}, 0)`;
+
+        //reference for removing later
+        coinElements[key] = coinElement;
+        gameContainer.appendChild(coinElement);
+      })
+
+      //Update characters name with the text input
+      playerNameInput.addEventListener("change", (e)=>{
+        const newName = e.target.value || createName();
+        playerNameInput.value= newName;
+        //a thing in firebase where it updates the characters name
+        playerRef.update({
+          name: newName
+        })
+      })
+
+      //Removing coins
+      allCoinsRef.on("child_removed", (snapshot) => {
+        const {x,y} = snapshot.val();
+        const keyToRemove = getKeyString(x,y);
+        gameContainer.removeChild( coinElements[keyToRemove] );
+        delete coinElements[keyToRemove];
+      })
+
+      //Updates the players color with the button
+      playerColorButton.addEventListener("click",() =>{
+        const playerColorChange = playerColors.indexOf(players[playerId].color);
+        const nextColor = playerColors[playerColorChange +1] || playerColors[0];
+        playerRef.update({
+          color:nextColor
+        })
       })
   }
 /*
@@ -269,16 +376,20 @@ RESULTS:
     if(user){
       //You are logged in~ Have Fun!
       playerId =user.uid;
-      playerRef = firebase.datanase().ref(`player/${[playerId]}`)
+      playerRef = firebase.database().ref(`player/${[playerId]}`)
       // calling the function
       const name = createName()
+      // edits the text box and syncs with firebase.
+      playerNameInput.value = name;
+      const {x,y} = randomSafeSpot();
       
       playerRef.set({
         id:playerId,
         name,
+        direction :"right",
         color: MathrandomArray(playerColors),
-        x:3,
-        y:3,
+        x,
+        y,
         coins: 0,
       })
 
