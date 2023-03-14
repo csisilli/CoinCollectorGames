@@ -28,7 +28,7 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 /*
 NAME:-
       game-container
@@ -110,7 +110,7 @@ input[type="text"] {
     border: 3px solid #222034;
     width: 150px;
     text-transform: uppercase;
-  }
+}
 /*
 NAME:-
      input [type ="text"]:focus
@@ -122,7 +122,7 @@ RESULTS:
 */
 input[type="text"]:focus {
     border-color: #f000ff;
-  }
+}
 /*
 NAME:-
      button
@@ -202,6 +202,7 @@ RESULTS:
 .Character.you .Character_you-arrow {
     display: block;
  }
+
  /*
 NAME:-
     .Character_you-arrow
@@ -264,19 +265,19 @@ RESULTS:
 /* Orange Sprite */
 .Character[data-color="orange"] .Character_sprite {
     background-position-y: -32px;
-  }
+}
 /* Yellow Sprite */
 .Character[data-color="yellow"] .Character_sprite {
     background-position-y: -48px;
-  }
+}
 /* Green Sprite */
 .Character[data-color="green"] .Character_sprite {
     background-position-y: -64px;
-  }
+}
 /* Purple Sprite */
 .Character[data-color="purple"] .Character_sprite {
     background-position-y: -80px;
-  }
+}
 
 /*Character's Shadow */
 
@@ -314,7 +315,7 @@ RESULTS:
     font-weight: bold;
     text-transform: uppercase;
     white-space: nowrap;
-  }
+}
 /*Character's Coin's */
 
 /*
@@ -328,7 +329,7 @@ RESULTS:
 .Character_coins {
     margin-left: 1px;
     color: gold;
-  }
+}
 
 /* Coins */
 
@@ -347,23 +348,23 @@ RESULTS:
 
 /*
 NAME:-
-    .Character_coins
+    @keyframes coinFloat
 DESCRIPTION:
-    Modify the character coins
+    Modify the coins float
 RESULTS:
-    1. changing the display of the character coin with margin left and color
+    1. changing the display of the coin and how they float
 */
 @keyframes coinFloat {
     from { transform: translateY(0) }
     to { transform: translateY(5px) }
-  }
+}
 /*
 NAME:-
-    .Character_coins
+    .Coin_shadow
 DESCRIPTION:
-    Modify the character coins
+    Modify the coins shadows
 RESULTS:
-    1. changing the display of the character coin with margin left and color
+    1. changing the display of the coin shadow with adding the images.
 */
 .Coin_shadow {
     background: url(/images/coin-shadow.png) no-repeat no-repeat;
