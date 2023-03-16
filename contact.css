@@ -69,3 +69,21 @@ h4 {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     size-adjust: 10px;
 }
+
+/*  =========Media Information Small Devices======== */
+
+/*
+NAME:-
+      @media screen and (max-width: 600px)
+DESCRIPTION:
+        Anything in who looking at a smaller screen
+RESULTS:
+    1. Visually see the size-adjust for different devices.
+
+*/
+@media screen and (max-width: 600px){
+    .container.contact__container{
+        width: 90%;
+        
+    }
+}

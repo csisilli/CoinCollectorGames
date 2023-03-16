@@ -124,3 +124,20 @@ h4 {
     text-decoration: underline;
     size-adjust: 10px;
 }
+/*  =========Media Information Small Devices======== */
+
+/*
+NAME:-
+      @media screen and (max-width: 600px)
+DESCRIPTION:
+        Anything in who looking at a smaller screen
+RESULTS:
+    1. Visually see the size-adjust for different devices.
+
+*/
+@media screen and (max-width: 600px){
+    html,body {
+        width: 90%;
+        
+    }
+}
