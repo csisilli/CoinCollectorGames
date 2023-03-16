@@ -1,0 +1,18 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: linear-gradient(180deg, #64BEFF -50%, #6e96ff 69.71%, #2a65ff 150%);
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+}
+header  {
+    text-align: center;
+}
+nav {
+    text-align: center;
+}
+div.coin {
+    text-align: center;
+    
+}
