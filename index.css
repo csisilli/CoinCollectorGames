@@ -152,7 +152,24 @@ button:active{
     position: relative;
     top: 1px;
 }
-
+/*
+NAME:-
+    nav
+DESCRIPTION:
+     Click's back to home page.
+RESULTS:
+    1. brings back to the home page.
+*/
+nav {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    font-family:Time New Roman;
+    background: #4da3b3;
+    border: 0;
+    border-bottom: 2px solid #1e830b;
+    cursor: pointer;
+    text-align:center;
+}
 /* Now for Characters */
 /*
 NAME:-
