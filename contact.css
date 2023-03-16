@@ -1,0 +1,71 @@
+/*
+NAME:-
+      html,body
+DESCRIPTION:
+        Anything in the contact.html that is labeled html and body will be modify with the code here
+RESULTS:
+    1. Visually see the backgrond color change, margin, padding, height, display, font, and etc be modify.
+
+*/
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 105%;
+    background: linear-gradient(180deg, #e6b2b2 -50%, #793232 69.71%, #5f1010 150%);
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+}
+/*
+NAME:-
+      img 
+DESCRIPTION:
+        Anything in the contact.html that is labeled with img
+RESULTS:
+    1. Visually see the border: 3px, solid, and padding.
+
+*/
+img {
+    border: 5px solid rgb(0, 0, 0);
+    padding: 2px;
+}
+/*
+NAME:-
+      h3
+DESCRIPTION:
+        Anything in the home.html with h23
+RESULTS:
+    1. Visually see the color, and font family.
+
+*/
+h3 {
+    color:#f3eeee;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+/*
+NAME:-
+      header
+DESCRIPTION:
+        Anything in the home.html that is labeled html and body will be modify with the code here
+RESULTS:
+    1. Visually see the color and text decoration.
+
+*/
+header  {
+    color:#ffffff;
+    text-decoration: underline;
+}
+/*
+NAME:-
+      p
+DESCRIPTION:
+        Anything in the home.html with p
+RESULTS:
+    1. Visually see the color, font family, text decoration, and size-adjust.
+
+*/
+h4 {
+    color:#ffffff;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    size-adjust: 10px;
+}
