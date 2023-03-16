@@ -1,18 +1,82 @@
+/*
+NAME:-
+      html,body
+DESCRIPTION:
+        Anything in the index.html that is labeled html and body will be modify with the code here
+RESULTS:
+    1. Visually see the backgrond color change, margin, padding, height, display, font, and etc be modify.
+
+*/
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
-    background: linear-gradient(180deg, #64BEFF -50%, #6e96ff 69.71%, #2a65ff 150%);
+    height: 125%;
+    background: linear-gradient(180deg, #e7bfe5 -50%, #735377 69.71%, #2a65ff 150%);
     font-family: 'Source Sans Pro', sans-serif;
     text-align: center;
 }
+/*
+NAME:-
+      html,body
+DESCRIPTION:
+        Anything in the index.html that is labeled html and body will be modify with the code here
+RESULTS:
+    1. Visually see the backgrond color change, margin, padding, height, display, font, and etc be modify.
+
+*/
 header  {
-    text-align: center;
+    color:#ffffff;
 }
+/*
+NAME:-
+      html,body
+DESCRIPTION:
+        Anything in the index.html that is labeled html and body will be modify with the code here
+RESULTS:
+    1. Visually see the backgrond color change, margin, padding, height, display, font, and etc be modify.
+
+*/
 nav {
-    text-align: center;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    font-family:Time New Roman;
+    cursor: pointer;
 }
+/*
+NAME:-
+      html,body
+DESCRIPTION:
+        Anything in the index.html that is labeled html and body will be modify with the code here
+RESULTS:
+    1. Visually see the backgrond color change, margin, padding, height, display, font, and etc be modify.
+
+*/
 div.coin {
-    text-align: center;
-    
+    margin: gold;
+}
+/*
+NAME:-
+      img 
+DESCRIPTION:
+        Anything in the index.html that is labeled html and body will be modify with the code here
+RESULTS:
+    1. Visually see the backgrond color change, margin, padding, height, display, font, and etc be modify.
+
+*/
+img {
+    border: 3px solid rgb(230, 164, 22);
+    padding: 2px;
+}
+/*
+NAME:-
+      html,body
+DESCRIPTION:
+        Anything in the index.html that is labeled html and body will be modify with the code here
+RESULTS:
+    1. Visually see the backgrond color change, margin, padding, height, display, font, and etc be modify.
+
+*/
+h2 {
+    color:#ffffff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
