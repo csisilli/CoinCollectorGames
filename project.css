@@ -1,0 +1,18 @@
+/*
+NAME:-
+      html,body
+DESCRIPTION:
+        Anything in the project.html that is labeled html and body will be modify with the code here
+RESULTS:
+    1. Visually see the backgrond color change, margin, padding, height, display, font, and etc be modify.
+
+*/
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 130%;
+    background: linear-gradient(180deg, #e7bfe5 -50%, #735377 69.71%, #2a65ff 150%);
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+}
