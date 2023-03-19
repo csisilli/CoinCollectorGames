@@ -7,6 +7,7 @@ RESULTS:
     1. Visually see the backgrond color change, margin, padding, height, display, font, and etc be modify.
 
 */
+
 html, body {
     margin: 0;
     padding: 0;
@@ -15,6 +16,7 @@ html, body {
     font-family: 'Source Sans Pro', sans-serif;
     text-align: center;
 }
+
 /*
 NAME:-
       header
@@ -24,9 +26,11 @@ RESULTS:
     1. Visually see the color.
 
 */
+
 header  {
     color:#ffffff;
 }
+
 /*
 NAME:-
       html,body
@@ -36,6 +40,7 @@ RESULTS:
     1. Visually see the backgrond color change, margin, padding, height, display, font, and etc be modify.
 
 */
+
 nav {
     padding-left: 0.5em;
     padding-right: 0.5em;
@@ -43,6 +48,7 @@ nav {
     cursor: pointer;
     background-color:#907494
 }
+
 /*
 NAME:-
       div.coin
@@ -52,9 +58,11 @@ RESULTS:
     1. Visually see the margin to be gold.
 
 */
+
 div.coin {
     margin: gold;
 }
+
 /*
 NAME:-
       img 
@@ -64,10 +72,12 @@ RESULTS:
     1. Visually see the border: 3px, solid, and padding.
 
 */
+
 img {
     border: 3px solid rgb(230, 164, 22);
     padding: 2px;
 }
+
 /*
 NAME:-
       h2
@@ -77,11 +87,13 @@ RESULTS:
     1. Visually see the color, text decoration, and font family.
 
 */
+
 h2 {
     color:#ffffff;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-decoration: underline;
 }
+
 /*
 NAME:-
       h3
@@ -91,10 +103,12 @@ RESULTS:
     1. Visually see the color and font family.
 
 */
+
 h3 {
     color:#75281c;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
 /*
 NAME:-
       p
@@ -104,11 +118,13 @@ RESULTS:
     1. Visually see the color, font style, and font family.
 
 */
+
 p {
     color:  #ffffff;
     font-style: italic;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 /*
 NAME:-
       p
@@ -118,6 +134,7 @@ RESULTS:
     1. Visually see the color, font family, text decoration, and size-adjust.
 
 */
+
 h4 {
     color:#ffffff;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -136,6 +153,7 @@ RESULTS:
     1. Visually see the size-adjust for different devices.
 
 */
+
 @media screen and (max-width: 600px){
     html,body {
         width: 90%;

@@ -6,11 +6,13 @@ DESCRIPTION:
 RESULTS:
     Returns by the user on the map cant go over to certain parts of the map
 */
+
 const mapData = {
     minX: 1,
     maxX: 14,
     minY: 4,
     maxY: 12,
+
     //blocking the spaces on the map.
     blockedSpaces: {
       "7x4": true,
@@ -45,6 +47,7 @@ const mapData = {
   function randomFromArray(array) {
     return array[Math.floor(Math.random() * array.length)];
   }
+
    /*
   NAME:
          keyString(x,y)
@@ -55,9 +58,11 @@ const mapData = {
       Returns a string to be used to make a map of a game. 
   
   */
+
   function keyString(x, y) {
     return `${x}x${y}`;
   }
+
     /*
   NAME:-
         createName()
@@ -67,7 +72,9 @@ const mapData = {
       1. Once opening the app, the user can create a name to join in the server. 
   
   */
+
   function createName() {
+
     //part of a random array for the user can pick their name.
     const prefix = randomFromArray([
       "COOL",
@@ -88,6 +95,7 @@ const mapData = {
       "BUFF",
       "DOPE",
     ]);
+
     //part of a random array for the user can pick their name as well.
     const animal = randomFromArray([
       "BEAR",
@@ -122,8 +130,10 @@ const mapData = {
   */
 
   function isSolid(x,y) {
+
     // makes an x and y cordinate that looks like in blockedSpaces.
     const blockedNextSpace = mapData.blockedSpaces[keyString(x, y)];
+
     // this is determinding if the space is okay step on.
     return (
       blockedNextSpace ||
@@ -133,6 +143,7 @@ const mapData = {
       y < mapData.minY
     )
   }
+
     /*
   NAME:-
         randomSafeSpot()
@@ -144,7 +155,9 @@ const mapData = {
       1. Once opening the app, the character will spawm in randomly picked spots
   
   */
+
   function randomSafeSpot() {
+
     // this is for the character to randomly spawn in these specfici spots.
     return randomFromArray([
       { x: 1, y: 4 },
@@ -172,6 +185,7 @@ const mapData = {
       { x: 11, y: 4 },
     ]);
   }
+
  /*
   NAME:-
         ()
@@ -185,12 +199,16 @@ const mapData = {
   */  
   
   (function () {
+
   //player id who login in firebase
     let playerId;
+
     // Intract with the database
     let playerRef;
+
     //Local list of where the character is and etc
     let players = {};
+
     //list of elements
     let playerElements = {};
 
@@ -200,8 +218,10 @@ const mapData = {
   
      // These's are saved elements
     const gameContainer = document.querySelector(".game-container");
+
     // this is name input that matches with the div in index.html
     const playerNameInput = document.querySelector("#player-name");
+
      // this is button input that matches with the div in index.html
     const playerColorButton = document.querySelector("#player-color");
   
@@ -214,6 +234,7 @@ const mapData = {
       1. randomly place coins in a safe area where it not blocked 
   
 */  
+
     function placeCoin() {
       const { x, y } = randomSafeSpot();
       const coinRef = firebase.database().ref(`coins/${keyString(x, y)}`);
@@ -227,6 +248,7 @@ const mapData = {
         placeCoin();
       }, randomFromArray(coinTimeouts));
     }
+
 /*
   NAME:-
         attemptGrabCoin(x, y)
@@ -238,6 +260,7 @@ const mapData = {
       1. it attemps the user to grab the coin
   
 */ 
+
     function attemptGrabCoin(x, y) {
       const key = keyString(x, y);
       if (coins[key]) {
@@ -265,9 +288,11 @@ const mapData = {
       const newX = players[playerId].x + xChange;
       const newY = players[playerId].y + yChange;
       if (!isSolid(newX, newY)) {
+
         //move to the next space
         players[playerId].x = newX;
         players[playerId].y = newY;
+
         //new position and direction
         if (xChange === 1) {
           players[playerId].direction = "right";
@@ -280,6 +305,7 @@ const mapData = {
         attemptGrabCoin(newX, newY);
       }
     }
+
 /*
   NAME:-
         initGame()
@@ -289,6 +315,7 @@ const mapData = {
       1. Read the players and coins in the game
   
 */
+
     function initGame() {
   
       new KeyPressListener("ArrowUp", () => handleArrowPress(0, -1))
@@ -302,12 +329,15 @@ const mapData = {
 
         //Fires when a change does occur
       allPlayersRef.on("value", (snapshot) => {
+
         //sync our players in firebase
         players = snapshot.val() || {};
+
         //keys for each player
         Object.keys(players).forEach((key) => {
           const characterState = players[key];
           let el = playerElements[key];
+
           // Use to update
           el.querySelector(".Character_name").innerText = characterState.name;
           el.querySelector(".Character_coins").innerText = characterState.coins;
@@ -319,10 +349,12 @@ const mapData = {
         })
       })
       allPlayersRef.on("child_added", (snapshot) => {
+
         //Fires when a node is added to the tree
         const addedPlayer = snapshot.val();
         const characterElement = document.createElement("div");
         characterElement.classList.add("Character", "grid-cell");
+
         //If it the creator aka Caitlin it should show in green it me
         if (addedPlayer.id === playerId) {
           characterElement.classList.add("you");
@@ -401,6 +433,7 @@ const mapData = {
       playerNameInput.addEventListener("change", (e) => {
         const newName = e.target.value || createName();
         playerNameInput.value = newName;
+
         //a thing in firebase where it updates the characters name
         playerRef.update({
           name: newName
@@ -420,6 +453,7 @@ const mapData = {
       placeCoin();
   
     }
+
 /*
   NAME:-
         firebase.auth().onAuthStateChnaged
@@ -429,14 +463,17 @@ const mapData = {
       1. Read the players and gives an id to them.
   
   */ 
+
     firebase.auth().onAuthStateChanged((user) => {
       console.log(user)
       if (user) {
         //You are logged in~ Have Fun!
         playerId = user.uid;
         playerRef = firebase.database().ref(`players/${playerId}`);
+
         // calling the function
         const name = createName();
+
         // edits the text box and syncs with firebase.
         playerNameInput.value = name;
   
@@ -461,6 +498,7 @@ const mapData = {
         //You are logged out~ Goodbye!
       }
     })
+
     //Catches an error if anything wrong occurs
     firebase.auth().signInAnonymously().catch((error) => {
       var errorCode = error.code;

@@ -7,6 +7,7 @@ RESULTS:
     1. Visually see the backgrond color change, margin, padding, height, display, font, and etc be modify.
 
 */
+
 html, body {
     margin: 0;
     padding: 0;
@@ -15,6 +16,7 @@ html, body {
     font-family: 'Source Sans Pro', sans-serif;
     text-align: center;
 }
+
 /*
 NAME:-
       img 
@@ -24,10 +26,12 @@ RESULTS:
     1. Visually see the border: 3px, solid, and padding.
 
 */
+
 img {
     border: 5px solid rgb(0, 0, 0);
     padding: 2px;
 }
+
 /*
 NAME:-
       h3
@@ -37,11 +41,13 @@ RESULTS:
     1. Visually see the color, and font family.
 
 */
+
 h3 {
     color:#f3eeee;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
 }
+
 /*
 NAME:-
       header
@@ -51,10 +57,12 @@ RESULTS:
     1. Visually see the color and text decoration.
 
 */
+
 header  {
     color:#ffffff;
     text-decoration: underline;
 }
+
 /*
 NAME:-
       p
@@ -64,6 +72,7 @@ RESULTS:
     1. Visually see the color, font family, text decoration, and size-adjust.
 
 */
+
 h4 {
     color:#ffffff;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -81,6 +90,7 @@ RESULTS:
     1. Visually see the size-adjust for different devices.
 
 */
+
 @media screen and (max-width: 600px){
     .container.contact__container{
         width: 90%;

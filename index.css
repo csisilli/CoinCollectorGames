@@ -7,9 +7,11 @@ RESULTS:
     1. the game will be in a box-sizing border
 
 */
+
 * {
     box-sizing: border-box;
 }
+
 /*
 NAME:-
       html,body
@@ -19,16 +21,18 @@ RESULTS:
     1. Visually see the backgrond color change, margin, padding, height, display, font, and etc be modify.
 
 */
+
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background: linear-gradient(180deg, #64BEFF -50%, #6e96ff 69.71%, #2a65ff 150%);
+    background: linear-gradient(180deg, #d4b7db -50%, #673a70 69.71%, #59116e 150%);
     font-family: 'Source Sans Pro', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 /*
 NAME:-
       game-container
@@ -38,6 +42,7 @@ RESULTS:
     1. Visually see the what is in the ckass will be modify with poistion, height, width, transform will be scaled to 3, and image will be rendered to be pixelated
 
 */
+
 .game-container { 
     position: relative;
     width: 240px;
@@ -46,6 +51,7 @@ RESULTS:
     transform: scale(3);
     image-rendering: pixelated;
   }
+
 /*
 NAME:-
       player-info
@@ -55,6 +61,7 @@ RESULTS:
     1. Fix the character info visually. The poistion, top,left padding, display, gap, and align items.
 
 */
+
 .player-info {
     position: absolute;
     top: 0;
@@ -64,6 +71,7 @@ RESULTS:
     gap: 0.5em;
     align-items: flex-end
   }
+
 /*
 NAME:-
      label
@@ -73,10 +81,12 @@ RESULTS:
     1. changing the display and font of the user name
 
 */
+
 label {
     display: block;
     font-weight: bold;
   }
+
 /*
 NAME:
      input [type ="text"],button
@@ -86,6 +96,7 @@ RESULTS:
     1. changing the display of the button to look different with, the font style, size, weight, height, boreer-radius, and outline
 
 */
+
 input[type="text"],
 button {
   font-family: inherit;
@@ -95,6 +106,7 @@ button {
   border-radius: 4px;
   outline: 0;
 }
+
 /*
 NAME:-
      input [type ="text"]
@@ -104,6 +116,7 @@ RESULTS:
     1. changing the display of the text with outline, padding, border with color, width, and text-transform
 
 */
+
 input[type="text"] {
     outline: 0;
     padding-left: 0.5em;
@@ -111,6 +124,7 @@ input[type="text"] {
     width: 150px;
     text-transform: uppercase;
 }
+
 /*
 NAME:-
      input [type ="text"]:focus
@@ -120,9 +134,11 @@ RESULTS:
     1. changing the display of the text border color to pink
 
 */
+
 input[type="text"]:focus {
     border-color: #f000ff;
 }
+
 /*
 NAME:-
      button
@@ -132,6 +148,7 @@ RESULTS:
     1. changing the display of the button with padding left,padding right, background color green, border, border-bottom, and cursor
 
 */
+
 button {
     padding-left: 0.5em;
     padding-right: 0.5em;
@@ -140,6 +157,7 @@ button {
     border-bottom: 2px solid #1e830b;
     cursor: pointer;
 }
+
 /*
 NAME:-
      button:active
@@ -148,10 +166,12 @@ DESCRIPTION:
 RESULTS:
     1. changing the display of the button when active with the position relative and top
 */
+
 button:active{
     position: relative;
     top: 1px;
 }
+
 /*
 NAME:-
     nav
@@ -160,6 +180,7 @@ DESCRIPTION:
 RESULTS:
     1. brings back to the home page.
 */
+
 nav {
     padding-left: 0.5em;
     padding-right: 0.5em;
@@ -170,7 +191,9 @@ nav {
     cursor: pointer;
     text-align:center;
 }
+
 /* Now for Characters */
+
 /*
 NAME:-
      grid-cell
@@ -179,11 +202,13 @@ DESCRIPTION:
 RESULTS:
     1. changing the display of the character grid with posotion, width, and height
 */
+
 .grid-cell {
     position: absolute;
     width: 16px;
     height: 16px;
 }
+
 /*
 NAME:-
     Character
@@ -192,9 +217,11 @@ DESCRIPTION:
 RESULTS:
     1. changing the display of the character transition
 */
+
 .Character {
     transition: transform 0.4s;
 }
+
 /*
 NAME:-
     Character.you
@@ -203,9 +230,11 @@ DESCRIPTION:
 RESULTS:
     1. changing the display of the character of me with the index
 */
+
 .Character.you {
    z-index: 1;
 }
+
 /*Character's Arrows */
 
 /*
@@ -216,6 +245,7 @@ DESCRIPTION:
 RESULTS:
     1. changing the display of the character 
 */
+
 .Character.you .Character_you-arrow {
     display: block;
  }
@@ -228,6 +258,7 @@ DESCRIPTION:
 RESULTS:
     1. changing the display of the character arrow with display, position, top,left,width,height, and background.
 */
+
 .Character_you-arrow {
     display: none;
     position: absolute;
@@ -248,11 +279,13 @@ DESCRIPTION:
 RESULTS:
     1. changing the display of the character sprite with overflow, top, and background
 */
+
 .Character_sprite {
     overflow: hidden;
     top: -3px;
     background: url(/images/characters.png);
 }
+
  /*
 NAME:-
     .Character[data-direction="right"] .Character_sprite 
@@ -261,6 +294,7 @@ DESCRIPTION:
 RESULTS:
     1. changing the display of the character sprite with overflow, top, and background
 */
+
 .Character[data-direction="right"] .Character_sprite {
     background-position: 16px;
 }
@@ -275,23 +309,33 @@ DESCRIPTION:
 RESULTS:
     1. changing the display of the character sprite with background position y and the color.
 */
+
 /* Red Sprite */
+
 .Character[data-color="red"] .Character_sprite {
     background-position-y: -16px;
 }
+
 /* Orange Sprite */
+
 .Character[data-color="orange"] .Character_sprite {
     background-position-y: -32px;
 }
+
 /* Yellow Sprite */
+
 .Character[data-color="yellow"] .Character_sprite {
     background-position-y: -48px;
 }
+
 /* Green Sprite */
+
 .Character[data-color="green"] .Character_sprite {
     background-position-y: -64px;
 }
+
 /* Purple Sprite */
+
 .Character[data-color="purple"] .Character_sprite {
     background-position-y: -80px;
 }
@@ -306,6 +350,7 @@ DESCRIPTION:
 RESULTS:
     1. changing the display of the character shadow with entering the shadow image.
 */
+
 .Character_shadow {
     background: url(/images/shadow.png) no-repeat no-repeat;
 }
@@ -320,6 +365,7 @@ DESCRIPTION:
 RESULTS:
     1. changing the display of the character name container with position,top,left,font-size, padding, border radius, background, color, font weight, text transform, and white space.
 */
+
 .Character_name-container {
     position: absolute;
     top: -12px;
@@ -333,6 +379,7 @@ RESULTS:
     text-transform: uppercase;
     white-space: nowrap;
 }
+
 /*Character's Coin's */
 
 /*
@@ -343,6 +390,7 @@ DESCRIPTION:
 RESULTS:
     1. changing the display of the character coin with margin left and color
 */
+
 .Character_coins {
     margin-left: 1px;
     color: gold;
@@ -358,6 +406,7 @@ DESCRIPTION:
 RESULTS:
     1. changing the display of the character coin with margin left and color
 */
+
 .Coin_sprite {
     background: url(/images/coin.png) no-repeat no-repeat;
     animation: coinFloat 0.8s linear infinite alternate-reverse;
@@ -371,10 +420,12 @@ DESCRIPTION:
 RESULTS:
     1. changing the display of the coin and how they float
 */
+
 @keyframes coinFloat {
     from { transform: translateY(0) }
     to { transform: translateY(5px) }
 }
+
 /*
 NAME:-
     .Coin_shadow
@@ -383,6 +434,7 @@ DESCRIPTION:
 RESULTS:
     1. changing the display of the coin shadow with adding the images.
 */
+
 .Coin_shadow {
     background: url(/images/coin-shadow.png) no-repeat no-repeat;
 }
