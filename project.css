@@ -8,11 +8,44 @@ RESULTS:
 
 */
 
-html, body {
+html,body {
     margin: 0;
     padding: 0;
-    height: 130%;
-    background: linear-gradient(180deg, #e7bfe5 -50%, #735377 69.71%, #2a65ff 150%);
+    height: 145%;
     font-family: 'Source Sans Pro', sans-serif;
-    text-align: center;
+
 }
+
+/*
+NAME:-
+      html,body
+DESCRIPTION:
+        Anything in the project.html that is labeled html and body will be modify with the code here
+RESULTS:
+    1. Visually see the backgrond color change, margin, padding, height, display, font, and etc be modify.
+
+*/
+
+h1,h2, nav, div {
+    text-align:center;
+}
+
+/*  =========Media Information Small Devices======== */
+
+/*
+NAME:-
+      @media screen and (max-width: 600px)
+DESCRIPTION:
+        Anything in who looking at a smaller screen
+RESULTS:
+    1. Visually see the size-adjust for different devices.
+
+*/
+
+@media screen and (max-width: 600px){
+    html,body {
+        width: 90%;
+        
+    }
+}
+
