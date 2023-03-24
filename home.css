@@ -2,19 +2,111 @@
 NAME:-
       html,body
 DESCRIPTION:
-        Anything in the index.html that is labeled html and body will be modify with the code here
+        Anything in the home.html that is labeled html and body will be modify with the code here
 RESULTS:
     1. Visually see the backgrond color change, margin, padding, height, display, font, and etc be modify.
 
 */
 
-html, body {
+html,body {
     margin: 0;
     padding: 0;
-    height: 130%;
+    height: 147%;
     background: linear-gradient(180deg, #e7bfe5 -50%, #735377 69.71%, #2a65ff 150%);
     font-family: 'Source Sans Pro', sans-serif;
     text-align: center;
+}
+
+/*
+NAME:-
+      header
+DESCRIPTION:
+        Anything in the home.html that is labeled html and body will be modify with the code here
+RESULTS:
+    1. Visually see the height, margin, align-items, and justify-content
+
+*/
+
+header{
+    height: 10vh;
+    margin:0;
+    align-items: center;
+    justify-content: center;
+}
+
+/*
+NAME:-
+      .parallax-text
+DESCRIPTION:
+        Anything in the home.html that is labeled html and body will be modify with the code here
+RESULTS:
+    1. Visually see the top, font-family, font-size, font-style, and top.
+
+*/
+
+.parallax-text{
+    position: absolute;
+    font-family: 'Monstserrat','sans-serif';
+    font-size: 5vw;
+    font-style: italic;
+    top:200px;
+}
+
+/*
+NAME:-
+      html,body
+DESCRIPTION:
+        Anything in the home.html that is labeled html and body will be modify with the code here
+RESULTS:
+    1. Visually see the content, position, z-index, top, left, color, and -webkit-text-stroke
+
+*/
+
+.parallax-text::after{
+    content: attr(text);
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    color: transparent;
+    -webkit-text-stroke: 0.15vw black;
+}
+
+/*
+NAME:-
+      .image-front
+DESCRIPTION:
+        Anything in the home.html that is labeled html and body will be modify with the code here
+RESULTS:
+    1. Visually see the coin image width, animation change.
+
+*/
+
+.image-front{
+    width:20vw;
+    animation: coinAnimation
+    2s cubic-bezier(0.25,1,0.5,1)infinite alternate;
+}
+
+/*
+NAME:-
+      @keyframes coinAnimation
+DESCRIPTION:
+        Anything in the home.html animated the coin to move
+RESULTS:
+    1. Visually the coin move into the title
+
+*/
+
+@keyframes coinAnimation {
+    0%, 10%{
+        transform: 
+        translate(100vw, 0)rotate(15deg);
+    }
+    90%,100%{
+        transform: 
+        translate(-5vw, -5vw) rotate(-30deg);
+    }
 }
 
 /*
@@ -69,15 +161,27 @@ NAME:-
 DESCRIPTION:
         Anything in the home.html that is labeled with img
 RESULTS:
-    1. Visually see the border: 3px, solid, and padding.
+    1. Visually see the padding.
 
 */
 
 img {
-    border: 3px solid rgb(230, 164, 22);
     padding: 2px;
 }
 
+/*
+NAME:-
+      .mario
+DESCRIPTION:
+        Anything in the home.html that is labeled with mario class
+RESULTS:
+    1. Visually see the border: 3px, solid, 
+
+*/
+
+.mario {
+    border: 3px solid rgb(230, 164, 22);
+}
 /*
 NAME:-
       h2

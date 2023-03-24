@@ -5,7 +5,6 @@ DESCRIPTION:
         Anything in the contact.html that is labeled html and body will be modify with the code here
 RESULTS:
     1. Visually see the backgrond color change, margin, padding, height, display, font, and etc be modify.
-
 */
 
 html, body {
@@ -24,7 +23,6 @@ DESCRIPTION:
         Anything in the contact.html that is labeled with img
 RESULTS:
     1. Visually see the border: 3px, solid, and padding.
-
 */
 
 img {
@@ -39,7 +37,6 @@ DESCRIPTION:
         Anything in the home.html with h23
 RESULTS:
     1. Visually see the color, and font family.
-
 */
 
 h3 {
@@ -55,7 +52,6 @@ DESCRIPTION:
         Anything in the home.html that is labeled html and body will be modify with the code here
 RESULTS:
     1. Visually see the color and text decoration.
-
 */
 
 header  {
@@ -70,7 +66,6 @@ DESCRIPTION:
         Anything in the home.html with p
 RESULTS:
     1. Visually see the color, font family, text decoration, and size-adjust.
-
 */
 
 h4 {
@@ -88,7 +83,6 @@ DESCRIPTION:
         Anything in who looking at a smaller screen
 RESULTS:
     1. Visually see the size-adjust for different devices.
-
 */
 
 @media screen and (max-width: 600px){

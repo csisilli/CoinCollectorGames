@@ -11,9 +11,11 @@ RESULTS:
 html,body {
     margin: 0;
     padding: 0;
-    height: 145%;
-    font-family: 'Source Sans Pro', sans-serif;
-
+    height: 143%;
+    background: linear-gradient(180deg, #e7bfe5 -50%, #735377 69.71%, #2a65ff 150%);
+    font-family: 'Josefin Sans',sans-serif;
+    align-items: center;
+    justify-content: center;
 }
 
 /*
@@ -29,6 +31,258 @@ RESULTS:
 h1,h2, nav, div {
     text-align:center;
 }
+
+/*
+NAME:-
+      html,body
+DESCRIPTION:
+        Anything in the project.html that is labeled html and body will be modify with the code here
+RESULTS:
+    1. Visually see the backgrond color change, margin, padding, height, display, font, and etc be modify.
+
+*/
+
+h3{
+    letter-spacing: 1px;
+}
+
+/* The Animation for What I learned from this project... */
+
+/*
+NAME:-
+      .wrapper 
+DESCRIPTION:
+        Anything in the project.html that is animated is effected in the wrapper for I code in
+RESULTS:
+    1. Visually see the height,display, letter-spacing,and  font-size
+
+*/
+
+.wrapperone {
+    height: 200px;
+    display: flex;
+    letter-spacing: 2px;
+    font-size: 45px;
+}
+
+/*
+NAME:-
+      .wrapperone::before
+DESCRIPTION:
+        Anything in the project.html that is animated is effected in the wrapper for what i learned
+RESULTS:
+    1. Visually see the content and font-size
+
+*/
+
+.wrapperone::before{
+    content:"'";
+    font-size: 50px;
+}
+
+/*
+NAME:-
+      .wrapperone::after
+DESCRIPTION:
+        Anything in the project.html that is animated is effected in the wrapper for what i learned
+RESULTS:
+    1. Visually see the content and font size
+
+*/
+
+.wrapperone::after{
+    content:"'";
+    font-size: 50px;
+}
+
+/*
+NAME:-
+      .wrapper::before,.wrapper::after 
+DESCRIPTION:
+        Anything in the project.html that is animated is effected in the wrapper for what i learned
+RESULTS:
+    1. Visually see the animation name, duration, and iteration count
+*/
+
+.wrapperone::before,.wrapperone::after {
+    -webkit-animation-name: display;
+    -webkit-animation-duration: 620s;
+    -webkit-animation-iteration-count: infinite;
+}
+
+
+/* The Animation for I code in ... */
+
+
+/*
+NAME:-
+      html,body
+DESCRIPTION:
+        Anything in the project.html that is labeled html and body will be modify with the code here
+RESULTS:
+    1. Visually see the backgrond color change, margin, padding, height, display, font, and etc be modify.
+
+*/
+
+.animate {
+    margin: 0 10px;
+    display: center;
+    letter-spacing: 2px;
+    font-size: 45px;
+}
+
+/*
+NAME:-
+      .wrapper 
+DESCRIPTION:
+        Anything in the project.html that is animated is effected in the wrapper for I code in
+RESULTS:
+    1. Visually see the height,display, letter-spacing,and  font-size
+
+*/
+
+.wrapper {
+    height: 200px;
+    display: flex;
+    letter-spacing: 2px;
+    font-size: 45px;
+}
+
+/*
+NAME:-
+      .wrapper::before
+DESCRIPTION:
+        Anything in the project.html that is animated is effected in the wrapper for I code in
+RESULTS:
+    1. Visually see the content and font-size
+
+*/
+
+.wrapper::before{
+    content:"'";
+    font-size: 50px;
+}
+
+/*
+NAME:-
+      .wrapper::after
+DESCRIPTION:
+        Anything in the project.html that is animated is effected in the wrapper for I code in
+RESULTS:
+    1. Visually see the content and font size
+
+*/
+
+.wrapper::after{
+    content:"'";
+    font-size: 50px;
+}
+
+/*
+NAME:-
+      .wrapper::before,.wrapper::after 
+DESCRIPTION:
+        Anything in the project.html that is animated is effected in the wrapper for I code in
+RESULTS:
+    1. Visually see the animation name, duration, and iteration count
+*/
+
+.wrapper::before,.wrapper::after {
+    -webkit-animation-name: display;
+    -webkit-animation-duration: 70s;
+    -webkit-animation-iteration-count: infinite;
+}
+
+/*
+NAME:-
+      html,body
+DESCRIPTION:
+        Anything in the project.html that is labeled html and body will be modify with the code here
+RESULTS:
+    1. Visually see the backgrond color change, margin, padding, height, display, font, and etc be modify.
+
+*/
+
+.words{
+    margin: 0 3px;
+    overflow: hidden;
+}
+
+/*
+NAME:-
+      html,body
+DESCRIPTION:
+        Anything in the project.html that is labeled html and body will be modify with the code here
+RESULTS:
+    1. Visually see the backgrond color change, margin, padding, height, display, font, and etc be modify.
+
+*/
+
+span{
+    display: block;
+    height: 200%;
+    padding-left: 10px;
+    color: rgb(100, 153, 233);
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+}
+
+/*
+NAME:-
+      html,body
+DESCRIPTION:
+        Anything in the project.html that is labeled html and body will be modify with the code here
+RESULTS:
+    1. Visually see the backgrond color change, margin, padding, height, display, font, and etc be modify.
+
+*/
+
+@-webkit-keyframes display {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/*
+NAME:-
+      html,body
+DESCRIPTION:
+        Anything in the project.html that is labeled html and body will be modify with the code here
+RESULTS:
+    1. Visually see the backgrond color change, margin, padding, height, display, font, and etc be modify.
+
+*/
+
+@-webkit-keyframes spin {
+    0%{
+        transform: translateY(0%);
+    }
+
+    20%{
+        transform: translateY(10%);
+    }
+
+    40%{
+        transform: translateY(-90%);
+    }
+
+    60%{
+        transform: translateY(-100%);
+    }
+
+    80%{
+        transform: translateY(-200%);
+    }
+
+    100%{
+        transform: translateY(-300%);
+    }
+}
+
 
 /*  =========Media Information Small Devices======== */
 
@@ -48,4 +302,3 @@ RESULTS:
         
     }
 }
-
