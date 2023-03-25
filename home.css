@@ -88,6 +88,89 @@ RESULTS:
     2s cubic-bezier(0.25,1,0.5,1)infinite alternate;
 }
 
+
+/*
+NAME:-
+      ul
+DESCRIPTION:
+        Anything in the home.html that  in the ul modify the directory
+RESULTS:
+    1. Visually see the font-family, display, gap, align-items, and justify-content.
+
+*/
+
+ul {
+    font-family: "Chivo Mono", monospace;
+    display: flex;
+    gap: 100px;
+    align-items: center;
+  justify-content: center;
+}
+
+/*
+NAME:-
+      ul li 
+DESCRIPTION:
+        Anything in the home.html that  in the ul and li directory
+RESULTS:
+    1. Visually see the list-style.
+
+*/
+
+ul li {
+    list-style: none;
+}
+
+/*
+NAME:-
+      ul li a
+DESCRIPTION:
+        Anything in the home.html that  ul, li and a 
+RESULTS:
+    1. Visually see the font-size, font-weight, text-decoration, text-transform, color, padding, and transition.
+
+*/
+
+ul li a{
+    font-size: 26px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    color:white;
+    padding: 10px;
+    transition: 0.5s ease;
+}
+
+/*
+NAME:-
+      ul:hover li a
+DESCRIPTION:
+        Anything in the home.html that  in the ul, li and a 
+RESULTS:
+    1. Visually see when someone hover over the color changes.
+
+*/
+
+ul:hover li a {
+    color:#30edf4;
+}
+
+/*
+NAME:-
+      ul:hover li a:not(:hover)
+DESCRIPTION:
+        Anything in the home.html that  in the ul, li and a 
+RESULTS:
+    1. Visually see when someone doesnt hover over the color is white with opacity and a blur.
+
+*/
+
+ul:hover li a:not(:hover) {
+    color: white;
+    opacity: 0.3;
+    filter: blur(1px);
+}
+
 /*
 NAME:-
       @keyframes coinAnimation
