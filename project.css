@@ -222,7 +222,7 @@ span{
     display: block;
     height: 200%;
     padding-left: 10px;
-    color: rgb(100, 153, 233);
+    color: rgb(70, 15, 15);
     -webkit-animation-name: spin;
     -webkit-animation-duration: 10s;
     -webkit-animation-iteration-count: infinite;
@@ -283,6 +283,60 @@ RESULTS:
     }
 }
 
+/*
+NAME:-
+      .showcase
+DESCRIPTION:
+        Anything in the project.html that is labeled shows in the title
+RESULTS:
+    1. Visually see the backgrond width, height,and position.
+
+*/
+
+.showcase {
+    width: 100%;
+    height: 14%;
+    position: relative;
+}
+
+/*
+NAME:-
+      .showcase video
+DESCRIPTION:
+        Anything in the project.html that is labeled shows a repeated video loop in the 
+RESULTS:
+    1. Visually see the width, height, position, top, left, and object-fit.
+
+*/
+
+.showcase video {
+
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+/*
+NAME:-
+      .title
+DESCRIPTION:
+        Anything in the project.html that  in the div to modify the title
+RESULTS:
+    1. Visually see the width, height, background color, font-size, color, and mix-blend-mode
+
+*/
+
+.title {
+    width: 100%;
+    height: 90%;
+    background-color: #000;
+    font-size: 170px;
+    color: #fff;
+    mix-blend-mode: multiply;
+}
 
 /*  =========Media Information Small Devices======== */
 
