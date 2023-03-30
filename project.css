@@ -11,20 +11,21 @@ RESULTS:
 html,body {
     margin: 0;
     padding: 0;
-    height: 143%;
+    height: 155%;
     background: linear-gradient(180deg, #e7bfe5 -50%, #735377 69.71%, #2a65ff 150%);
     font-family: 'Josefin Sans',sans-serif;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 /*
 NAME:-
-      html,body
+      h1,h2, nav, div
 DESCRIPTION:
         Anything in the project.html that is labeled html and body will be modify with the code here
 RESULTS:
-    1. Visually see the backgrond color change, margin, padding, height, display, font, and etc be modify.
+    1. Visually see the text-align
 
 */
 
@@ -34,17 +35,46 @@ h1,h2, nav, div {
 
 /*
 NAME:-
-      html,body
+      h3
 DESCRIPTION:
         Anything in the project.html that is labeled html and body will be modify with the code here
 RESULTS:
-    1. Visually see the backgrond color change, margin, padding, height, display, font, and etc be modify.
+    1. Visually see the letter-spacing
 
 */
 
 h3{
     letter-spacing: 1px;
 }
+
+/*
+NAME:-
+      p
+DESCRIPTION:
+        Anything in the project.html that is labeled html and body will be modify with the code here
+RESULTS:
+    1. Visually see the font-size
+
+*/
+
+p {
+    font-size: 21px;
+}
+
+/*
+NAME:-
+      h4
+DESCRIPTION:
+        Anything in the project.html that is labeled html and body will be modify with the code here
+RESULTS:
+    1. Visually see the font-size
+
+*/
+
+h4{
+    font-size: 25px;
+}
+
 
 /* The Animation for What I learned from this project... */
 
@@ -420,6 +450,22 @@ ul:hover li a:not(:hover) {
     filter: blur(1px);
 }
 
+/*
+NAME:-
+      h2
+DESCRIPTION:
+        Anything in the project.html that  in h2 
+RESULTS:
+    1. Visually see the color change, font-size, and background color.
+
+*/
+
+h2{
+    color: whitesmoke;
+    background-color: #9c729a;
+    font-size: 40px;
+}
+
 
 /*  =========Media Information Small Devices======== */
 
@@ -434,8 +480,33 @@ RESULTS:
 */
 
 @media screen and (max-width: 600px){
-    html,body {
-        width: 90%;
-        
+    .container {
+        width: 90%;   
+    }
+
+    section {
+        margin-top: 2rem;
+    }
+}
+
+/*  =========Media Information Medium Devices======== */
+
+/*
+NAME:-
+      @media screen and (max-width: 1024px)
+DESCRIPTION:
+        Anything in who looking at a medium screen
+RESULTS:
+    1. Visually see the size-adjust for different devices.
+
+*/
+
+@media screen and (max-width: 1024px){
+    .container {
+        width: 86%;   
+    }
+
+    section {
+        margin-top: 6rem;
     }
 }

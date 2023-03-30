@@ -439,3 +439,47 @@ RESULTS:
     background: url(/images/coin-shadow.png) no-repeat no-repeat;
 }
 
+
+/*  =========Media Information Small Devices======== */
+
+/*
+NAME:-
+      @media screen and (max-width: 600px)
+DESCRIPTION:
+        Anything in who looking at a smaller screen
+RESULTS:
+    1. Visually see the size-adjust for different devices.
+
+*/
+
+@media screen and (max-width: 600px){
+    .container {
+        width: 90%;   
+    }
+
+    section {
+        margin-top: 2rem;
+    }
+}
+
+/*  =========Media Information Medium Devices======== */
+
+/*
+NAME:-
+      @media screen and (max-width: 1024px)
+DESCRIPTION:
+        Anything in who looking at a medium screen
+RESULTS:
+    1. Visually see the size-adjust for different devices.
+
+*/
+
+@media screen and (max-width: 1024px){
+    .container {
+        width: 86%;   
+    }
+
+    section {
+        margin-top: 6rem;
+    }
+}
