@@ -160,6 +160,7 @@ const mapData = {
 
     // this is for the character to randomly spawn in these specfici spots.
     return randomFromArray([
+
       { x: 1, y: 4 },
       { x: 2, y: 4 },
       { x: 1, y: 5 },
@@ -183,6 +184,7 @@ const mapData = {
       { x: 10, y: 8 },
       { x: 8, y: 8 },
       { x: 11, y: 4 },
+      
     ]);
   }
 
@@ -264,6 +266,7 @@ const mapData = {
     function attemptGrabCoin(x, y) {
       const key = keyString(x, y);
       if (coins[key]) {
+        
         // Remove the coins, then coin count
         firebase.database().ref(`coins/${key}`).remove();
         playerRef.update({
@@ -300,6 +303,7 @@ const mapData = {
         if (xChange === -1) {
           players[playerId].direction = "left";
         }
+
         //Let firebase know
         playerRef.set(players[playerId]);
         attemptGrabCoin(newX, newY);
@@ -343,6 +347,7 @@ const mapData = {
           el.querySelector(".Character_coins").innerText = characterState.coins;
           el.setAttribute("data-color", characterState.color);
           el.setAttribute("data-direction", characterState.direction);
+
           const left = 16 * characterState.x + "px";
           const top = 16 * characterState.y - 4 + "px";
           el.style.transform = `translate3d(${left}, ${top}, 0)`;
@@ -359,6 +364,7 @@ const mapData = {
         if (addedPlayer.id === playerId) {
           characterElement.classList.add("you");
         }
+
         characterElement.innerHTML = (`
           <div class="Character_shadow grid-cell"></div>
           <div class="Character_sprite grid-cell"></div>
@@ -368,6 +374,7 @@ const mapData = {
           </div>
           <div class="Character_you-arrow"></div>
         `);
+
         playerElements[addedPlayer.id] = characterElement;
   
         //Fill like the name, coin count and etc.
@@ -375,6 +382,7 @@ const mapData = {
         characterElement.querySelector(".Character_coins").innerText = addedPlayer.coins;
         characterElement.setAttribute("data-color", addedPlayer.color);
         characterElement.setAttribute("data-direction", addedPlayer.direction);
+
         const left = 16 * addedPlayer.x + "px";
         const top = 16 * addedPlayer.y - 4 + "px";
         characterElement.style.transform = `translate3d(${left}, ${top}, 0)`;
@@ -385,6 +393,7 @@ const mapData = {
       //Removing the character from the game when exit
       allPlayersRef.on("child_removed", (snapshot) => {
         const removedKey = snapshot.val().id;
+
         gameContainer.removeChild(playerElements[removedKey]);
         delete playerElements[removedKey];
       })
@@ -405,6 +414,7 @@ const mapData = {
         // Creating an element for the coins
         const coinElement = document.createElement("div");
         coinElement.classList.add("Coin", "grid-cell");
+
         coinElement.innerHTML = `
           <div class="Coin_shadow grid-cell"></div>
           <div class="Coin_sprite grid-cell"></div>
@@ -444,6 +454,7 @@ const mapData = {
       playerColorButton.addEventListener("click", () => {
         const colorIndex = playerColors.indexOf(players[playerId].color);
         const nextColor = playerColors[colorIndex + 1] || playerColors[0];
+
         playerRef.update({
           color: nextColor
         })
