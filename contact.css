@@ -373,11 +373,11 @@ RESULTS:
 
 /*
 NAME:-
-      content h2 span
+      .letter
 DESCRIPTION:
         Anything in the contact.html that  in the content
 RESULTS:
-    1. Visually see the contact picture as: font-weight and font-size.
+    1. Visually see the contact picture as: postion, display, margin-left, color, font-family, font-size, webkit-text, opacity, and animation.
     
 */
 
@@ -392,6 +392,46 @@ RESULTS:
     opacity: 0;
     animation: moveLetters 0.10s ease-out forwards;
 }
+
+/* Buttons */
+ 
+/*
+NAME:-
+      .btn
+DESCRIPTION:
+        Anything in the contact.html that  in the content
+RESULTS:
+    1. Visually see the contact picture as: background-color, font-size, font-weight, text-transform, color,  padding, border-radius, font, font-family and transition.
+    
+*/
+
+.btn {
+    background-color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: rgb(53, 4, 4);
+    padding: 15px 25px;
+    border-radius: 5000px;
+    transition: all 0.3s;
+    font: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*
+NAME:-
+      .btn:hover
+DESCRIPTION:
+        Anything in the contact.html that  in the content
+RESULTS:
+    1. Visually see the contact picture as: transform.
+    
+*/
+
+.btn:hover {
+    transform: scale(3.15);
+}
+
 
 /*
 NAME:-

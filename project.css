@@ -11,7 +11,7 @@ RESULTS:
 html,body {
     margin: 0;
     padding: 0;
-    height: 161%;
+    height: 165%;
     background: linear-gradient(180deg, #e7bfe5 -50%, #735377 69.71%, #2a65ff 150%);
     font-family: 'Josefin Sans',sans-serif;
     align-items: center;
@@ -473,6 +473,45 @@ h2{
     font-size: 40px;
     padding: 2px;
 }
+
+
+/*
+NAME:-
+      .gifs
+DESCRIPTION:
+        Anything in the project.html with Div gifs
+RESULTS:
+    1. Visually see the position, webkit-animation, webkit-animation-name, webkit-animation-duration.
+
+*/
+
+.gifs {
+    position: absolute;
+    -webkit-animation: linear infinite;
+    -webkit-animation-name: run;
+    -webkit-animation-duration: 5s;
+}
+
+/*
+NAME:-
+      @-webkit-keyframes run 
+DESCRIPTION:
+        Anything in the project.html with div gifs
+RESULTS:
+    1. Visually see the animation to left to right infinitely.
+
+*/
+
+@-webkit-keyframes run {
+    0% {
+        left: 0;
+      }
+      100% {
+        left: 100%;
+
+      }
+  }
+
 
 
 /*  =========Media Information Small Devices======== */
